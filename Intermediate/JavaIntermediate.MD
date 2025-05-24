@@ -1,6 +1,12 @@
-# Object Oriented Programing Concepts.
+# JDK, JVM, JRE
 
-## Object-Oriented Programming (OOP) Principles in Java.
+JDK is the tool kit that you need to have to run your java code.
+JVM is the virtual machine where you run the code.
+JVM needs an environment to run the code and is called JRE – Java Runtime Environment.
+When we install JDK we get updated versions of JRE and JVM.
+Normally client systems have JRE and JVM.
+
+# Object-Oriented Programming (OOP) Principles in Java.
 
 OOP is a programming paradigm centered around the concept of "objects," which are instances of "classes." Java is fundamentally an object-oriented language, and understanding these principles is essential for writing well-structured, maintainable, and scalable code.
 
