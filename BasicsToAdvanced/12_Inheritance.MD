@@ -25,7 +25,7 @@ Inheritance promotes code reusability by allowing subclasses to reuse the code d
 
 A subclass can provide its own implementation of a method that is already defined in its superclass. This allows a subclass to modify or extend the behavior inherited from the superclass.
 
-### Syntax for Inheritance in Java:
+#### Syntax for Inheritance in Java:
 
 ```Java
 class SubclassName extends SuperclassName {

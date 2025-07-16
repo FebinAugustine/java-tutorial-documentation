@@ -10,7 +10,7 @@
 
 **We have to give a name to variable to create/define it.**
 
-```
+```Java
 myName = “Hello”;
 myAge = 33;
 avgMark = 75.8;

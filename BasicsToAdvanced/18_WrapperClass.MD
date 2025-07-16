@@ -6,7 +6,7 @@ You know about primitive data types (like int, boolean, char) and reference data
 
 ## 1. What are Wrapper Classes? (The Core Concept)
 
-Imagine you have a simple gift: a shiny new pen (that's your primitive int). You want to send it in the mail, but postal services don't accept loose pens; they only accept packages. So, you put your pen inside a sturdy box (that's the Wrapper Class Integer). Now, the pen is still there, but it's "wrapped" inside an object, making it suitable for object-oriented operations.
+Imagine you have a simple gift: a shiny new pen (that's your primitive int). You want to send it in the mail, but postal services don't accept loose pens; they only accept packages. So, you put your pen inside a sturdy box (that's the Wrapper Class Integer). - Now, the pen is still there, but it's "wrapped" inside an object, making it suitable for object-oriented operations.
 
 In Java, a Wrapper Class is a class whose object "wraps" or contains a primitive data type. It allows you to represent primitive values as objects.
 
@@ -23,7 +23,6 @@ double Double
 char Character
 boolean Boolean
 
-- Export to Sheets
 - Notice that for most, it's just the capitalized primitive name. The exceptions are int (becomes Integer) and char (becomes Character).
 
 ## 2. WHY? The Need for Wrapper Classes
@@ -39,7 +38,7 @@ The most compelling reason! Java's Collections Framework (e.g., ArrayList, HashM
 
 ### 2. Generics:
 
-Closely related to collections, Java Generics (introduced in Java 5, also work exclusively with reference types (objects).
+Closely related to collections, Java Generics introduced in Java 5, also work exclusively with reference types (objects).
 
 List<T> expects T to be an object.
 Pair<Integer, String> is fine, but Pair<int, String> is not.
@@ -51,12 +50,18 @@ Primitive types cannot hold a null value. They always have a default value (e.g.
 int myInt = null; // Compile error
 Integer myInteger = null; // Valid
 
-### 4. Utility Methods: Wrapper classes provide a host of useful static methods for conversions, parsing, and constants.
+### 4. Utility Methods:
+
+Wrapper classes provide a host of useful static methods for conversions, parsing, and constants.
 
 Integer.parseInt("123") converts a String to an int.
 Double.valueOf("3.14") converts a String to a Double object.
 Character.isDigit('7') checks if a character is a digit.
-Integer.MAX_VALUE and Integer.MIN_VALUE provide the maximum and minimum values an int can hold. 5. Serialization: If you need to serialize (convert to a byte stream for storage or transmission) an object that contains primitive fields, those primitives need to be "wrapped" to participate in the object graph being serialized.
+Integer.MAX_VALUE and Integer.MIN_VALUE provide the maximum and minimum values an int can hold.
+
+### 5. Serialization:
+
+If you need to serialize (convert to a byte stream for storage or transmission) an object that contains primitive fields, those primitives need to be "wrapped" to participate in the object graph being serialized.
 
 ### 6. Synchronization:
 
@@ -84,7 +89,9 @@ System.out.println(d1); // 3.14
 
 ### Using the new keyword (Generally Discouraged/Deprecated):
 
-While still syntactically valid for most wrapper classes, using new for Integer, Long, Short, Byte, Character, Boolean is deprecated since Java 9. It explicitly creates a new object in the heap, bypassing the caching mechanism of valueOf().
+While still syntactically valid for most wrapper classes, using new for Integer, Long, Short, Byte, Character, Boolean is deprecated since Java
+
+### 9. It explicitly creates a new object in the heap, bypassing the caching mechanism of valueOf().
 
 ```Java
 
@@ -92,7 +99,7 @@ Integer i2 = new Integer(20); // Deprecated since Java 9
 Double d2 = new Double(2.71); // Not deprecated for Float/Double as they are not cached due to floating point precision
 ```
 
-### b) Retrieving Primitive Values from Wrapper Objects
+### b. Retrieving Primitive Values from Wrapper Objects
 
 Each wrapper class provides a method named xxxValue() (where xxx is the primitive type) to convert the wrapper object back into its primitive value.
 
@@ -109,4 +116,19 @@ System.out.println(primitiveDouble); // 50.5
 Character myChar = Character.valueOf('Z');
 char primitiveChar = myChar.charValue(); // Converts Character object to char primitive
 System.out.println(primitiveChar); // Z 4. WHEN? Autoboxing and Unboxing (The Magic!)
+```
+
+## 4. Autoboxing and Unboxing
+
+- a. Autoboxing: Converting primitive values to wrapper objects (e.g., int to Integer).
+- b. Unboxing: Converting wrapper objects back to primitive values (e.g., Integer to int).
+
+```Java
+
+int myInt = 10;
+Integer myInteger = myInt; // Autoboxing: int to Integer
+System.out.println(myInteger); // 10
+
+Integer myInteger2 = 20;
+int myInt2 = myInteger2; // Unboxing: Integer to int
 ```

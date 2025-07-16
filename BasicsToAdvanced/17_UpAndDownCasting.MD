@@ -24,7 +24,7 @@ class B extends A {
 public Class Main {
 	Public static void main( ) {
 		// Type casting
-		double d =  = 4.5;
+		double d = 4.5;
 		int i = (int)d;
 		System.out.print(i);
 
@@ -33,7 +33,7 @@ public Class Main {
 		A obj = (A) new B();
 
 	// Down casting
-	We are down grading the obj of parent type to subclass type.
+	// We are down grading the obj of parent type to subclass type.
 	// Then onlywe will be able to call show2() in B class
 		B obj1 = obj; 	// wrong will not be able to call show2().
 		B obj = (B) obj;	// right way, down grading the obj of parent type to chld class.

@@ -8,13 +8,15 @@ Let's continue our deep dive into Java topics with explanations, key points, and
 
 Explanation: Variables are fundamental containers in Java used to store data values during program execution. Each variable has a name, a data type, and a value that can change throughout the program's lifecycle.
 
-### 5 Key Points:
+### Key Points:
 
 - A variable must be declared with a specific data type (e.g., int, String).
 - It must be initialized before it can be used to prevent compilation errors.
 - Variables have a scope (where they are accessible) and a lifetime.
 - Can store either primitive values or references to objects.
 - Naming conventions dictate starting with a lowercase letter and using camelCase.
+- Avoid using Java keywords (reserved words) as variable names. Eg. class, public, int, etc.
+- Avoid using special characters in variable names. Eg. $, \_, etc.
 
 #### Example:
 
@@ -28,8 +30,8 @@ String name = "Alice"; // Declaring and initializing a String variable
 
 Java has a wide range of data types, including:
 
-- Primitive Data Types: int, double, char, boolean, etc.
-- Reference Data Types: String, Object, Array, etc.
+- Primitive Data Types: int, double, char, boolean, byte, short, long, float.
+- Reference Data Types: String, Object, Array, Collection, Map, Set, Queue, Stack, Class, Interface, etc.
 
 Each data type has its own characteristics and usage, making it essential to understand the different types and their implications.
 
@@ -38,27 +40,96 @@ Each data type has its own characteristics and usage, making it essential to und
 ```Java
 
 int age = 30; // Declaring and initializing an integer variable
-
-String name = "Alice"; // Declaring and initializing a String variable
+// Integer has a fixed size of 32 bits and stores whole numbers between -2,147,483,648 to 2,147,483,647
 
 boolean isActive = true; // Declaring and initializing a boolean variable
+// Boolean has a fixed size of 1 bit and stores true or false values
 
 double pi = 3.14159; // Declaring and initializing a double variable
+// Double has a fixed size of 64 bits and stores double-precision floating-point numbers
 
 char letter = 'A'; // Declaring and initializing a character variable
+// Character has a fixed size of 16 bits and stores a single Unicode character
+
+byte temperature = 25; // Declaring and initializing a byte variable
+// Byte has a fixed size of 8 bits and stores whole numbers between -128 to 127
+
+short population = 10000; // Declaring and initializing a short variable
+// Short has a fixed size of 16 bits and stores whole numbers between -32,768 to 32,767
+
+long distance = 5000000000L; // Declaring and initializing a long variable
+// Long has a fixed size of 64 bits and stores large whole numbers
+
+float price = 9.99f; // Declaring and initializing a float variable
+// Float has a fixed size of 32 bits and stores single-precision floating-point numbers
+```
+
+You can first declare and then initialize or do it both at the same time is allowed. </br>
+**Example:**
+
+```
+int rollNo;  // declaration
+rollNo = 24;   // initialization
+
+int rollNo = 28; both at the same time
+```
+
+Primitive data types are also called literals.
+
+## Reference data types are:
+
+These data types do not store the actual value directly in memory. Instead, they store a reference (an address in memory) to the object that holds the actual data. Reference types include:
+
+**Classes:** Blueprints for creating objects (e.g., `String`, `Scanner`, custom classes you define). </br>
+**Interfaces:** Contracts that define a set of methods that a class can implement. </br>
+**Arrays:** Collections of elements of the same data type.
+
+### Key Points about Reference Types:
+
+- Their size is not fixed and depends on the size of the object they refer to. </br>
+- They are passed by reference. When you assign a reference variable to another, both variables will refer to the same object in memory. </br>
+
+**Examples:**
+
+```Java
+String name = "Alice"; // Declaring and initializing a String variable
+// String is a reference data type and stores textual data in memory as an array of characters (Unicode) and has a dynamic size based on the length of the string content (UTF-16).
 
 Object obj = new Object(); // Declaring and initializing an Object variable
+// Object is a reference data type and can store references to other objects
 
 int[] numbers = {1, 2, 3}; // Declaring and initializing an array variable
+// Array is a reference data type and stores multiple values of the same data type
 
 String[] names = {"Alice", "Bob", "Charlie"}; // Declaring and initializing a String array variable
+// String array is a reference data type and stores multiple strings
 
 int[][] matrix = {{1, 2}, {3, 4}}; // Declaring and initializing a 2D array variable
+// 2D array is a reference data type and stores multiple arrays
 
 int[][][] cube = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}}; // Declaring and initializing a 3D array variable
+// 3D array is a reference data type and stores multiple 2D arrays
 
 int[][][][] hypercube = {{{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}}, {{{9, 10}, {11, 12}}, {{13, 14}, {15, 16}}}}; // Declaring and initializing a 4D array variable
+// 4D array is a reference data type and stores multiple 3D arrays
 
+int[][][][][][] hyperhypercube = {...}; // Declaring and initializing a 5D array variable
+// 5D array is a reference data type and stores multiple 4D arrays
+
+collection = new ArrayList<>(); // Declaring and initializing a Collection variable
+// Collection is a reference data type and stores multiple objects
+
+map = new HashMap<>(); // Declaring and initializing a Map variable
+// Map is a reference data type and stores key-value pairs
+
+Set<Integer> set = new HashSet<>(); // Declaring and initializing a Set variable
+// Set is a reference data type and stores unique values
+
+Queue<Integer> queue = new LinkedList<>(); // Declaring and initializing a Queue variable
+// Queue is a reference data type and stores elements in a first-in-first-out (FIFO) order
+
+Stack<Integer> stack = new Stack<>(); // Declaring and initializing a Stack variable
+// Stack is a reference data type and stores elements in a last-in-first-out (LIFO) order
 
 ```
 
@@ -66,13 +137,15 @@ int[][][][] hypercube = {{{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}}, {{{9, 10}, {11, 1
 
 Explanation: Operators are special symbols that perform operations on one or more operands (variables or values) to produce a result. They are used for arithmetic, assignment, comparison, logical operations, and more.
 
-### 5 Key Points:
+### Key Points:
 
 - Arithmetic: +, -, \*, /, % (modulo).
 - Assignment: =, +=, -=, etc.
 - Comparison/Relational: ==, !=, <, >, <=, >=.
 - Logical: && (AND), || (OR), ! (NOT).
 - Unary: ++ (increment), -- (decrement), +, -.
+- Bitwise: &, |, ^, ~, <<, >>, >>>.
+- Ternary: ?: (conditional operator).
 
 #### Example:
 
@@ -83,6 +156,9 @@ int sum = a + b; // Arithmetic operator
 boolean isEqual = (a == b); // Comparison operator
 boolean condition = (a > 0 && b < 10); // Logical operator
 a++; // Unary operator
+int result = a & b; // Bitwise operator
+int max = a > b ? a : b; // Ternary operator
+
 ```
 
 ## 4. Array
@@ -115,7 +191,7 @@ Explanation: Control flow statements dictate the order in which individual instr
 
 - Conditional Statements: if-else, switch for decision making.
 - Looping Statements: for, while, do-while for repetitive tasks.
-- Branching Statements: break, continue, return to alter loop or method execution.
+- Branching Statements: break, continue to alter loop execution.
 - Determines the path of execution based on conditions or iterations.
 - Essential for creating dynamic and interactive programs.
 
@@ -132,28 +208,7 @@ for (int i = 0; i < 3; i++) { // Loop
 }
 ```
 
-## 6. Methods
-
-Explanation: Methods are functions that perform specific tasks and return a value. They encapsulate a set of instructions and can be reused in different parts of a program.
-
-### 5 Key Points:
-
-- A method is a named block of code that performs a specific task.
-- It can take input parameters (arguments) and return a value (result).
-- Can be called multiple times from different parts of the program.
-- Methods provide encapsulation, reusability, and modularity.
-
-#### Example:
-
-```Java
-
-void printMessage(String message) { // Method declaration
-    System.out.println(message);
-}
-printMessage("Hello, World!"); // Method call
-```
-
-## 7. Classes
+## 6. Classes
 
 Explanation: A class is a blueprint for creating objects, encapsulating data and behavior. It defines attributes (fields) and methods (functions) that can be shared among objects of the same class.
 
@@ -179,7 +234,7 @@ class Person {
 
 ```
 
-## 8. Objects
+## 7. Objects
 
 Explanation: Objects are instances of classes, created using the new keyword. They encapsulate data and behavior, allowing for encapsulation, reusability, and organization.
 
@@ -206,6 +261,29 @@ person1.name = "Alice";
 person1.age = 30;
 person1.introduce(); // Calling a method
 
+```
+
+## 6. Methods
+
+Explanation: Methods are functions that perform specific tasks and return a value. They encapsulate a set of instructions and can be reused in different parts of a program.
+
+### 5 Key Points:
+
+- A method is a named block of code that performs a specific task.
+- It can take input parameters (arguments) and return a value (result).
+- return keyword is used to specify the value to be returned.
+- return alters the flow of method execution.
+- Can be called multiple times from different parts of the program.
+- Methods provide encapsulation, reusability, and modularity.
+
+#### Example:
+
+```Java
+
+void printMessage(String message) { // Method declaration
+    System.out.println(message);
+}
+printMessage("Hello, World!"); // Method call
 ```
 
 ## 9. Main Method

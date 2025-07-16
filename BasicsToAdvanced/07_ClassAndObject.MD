@@ -164,25 +164,3 @@ public class Demo
 }
 
 ```
-
-## Anonymous object
-
-- We cannot reuse anonymous objects.
-- Every time you use it will create a new object.
-
-```Java
-Clas Anonymous
-{
-Public void show() { System.out.println(“Anonymous Object”);
-}
-
-Class Demo
-{
-	Public static void main (String[] args) {
-		Anonymous obj = new Anonymous();
-		// instead of the above we can use the below
-		new Anonymous();
-		new Anonymous().show;
-}
-}
-```

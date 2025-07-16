@@ -115,9 +115,11 @@ Autoboxing/unboxing involves creating (or retrieving from cache) new objects. In
 
 long startTime = System.nanoTime();
 Long sum = 0L; // sum is an object (Long)
+
 for (long i = 0; i < 1_000_000; i++) {
 sum = sum + i; // Each addition causes sum (Long) to be unboxed, added to i (long), then the result (long) is autoboxed back to sum (Long)
 }
+
 long endTime = System.nanoTime();
 System.out.println("Time taken with Long sum: " + (endTime - startTime) / 1_000_000 + " ms");
 
@@ -182,7 +184,7 @@ This is the primary use case. If you need to store primitive values in a List, M
 
 When a numerical or boolean value might genuinely be absent, use a wrapper type.
 
-### PI Design:
+### API Design:
 
 Many Java APIs (especially older ones) or frameworks use Object parameters, requiring primitive values to be wrapped.
 

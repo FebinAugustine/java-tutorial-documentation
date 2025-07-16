@@ -1,6 +1,8 @@
 # Static Keyword
 
-Alright class, settle in! Today, we're going to unravel one of Java's fundamental keywords: static. This keyword often causes a bit of confusion, but once you grasp its core concept, it becomes incredibly powerful and clear.
+Alright class, settle in! Today, we're going to unravel one of Java's fundamental keywords: static.
+<br>
+This keyword often causes a bit of confusion, but once you grasp its core concept, it becomes incredibly powerful and clear.
 
 - Think of static as defining something that belongs to the class itself, rather than to any specific object (or instance) of that class. It's about "class-level" vs. "object-level" members.
 
@@ -16,7 +18,8 @@ A blueprint or a template for creating objects. It defines what objects of that 
 
 ### Object (Instance):
 
-A concrete realization of a class. When you create an object (e.g., MyClass myObject = new MyClass();), you're making a unique entity based on that blueprint. Each object has its own set of instance variables. </br>
+A concrete realization of a class. When you create an object (e.g., MyClass myObject = new MyClass();), you're making a unique entity based on that blueprint. Each object has its own set of instance variables.
+</br>
 
 Now, imagine we want something that all objects of a class share, or something that exists even if no objects of that class have been created yet. That's where static comes in!
 
@@ -68,10 +71,10 @@ Counting Instances & Constants
 
 class Car {
 // static field: belongs to the Car class, shared by all Car objects
-private static int numberOfCarsCreated = 0;
+public static int numberOfCarsCreated = 0;
 
     // static final field: a constant belonging to the Car class
-    public static final String DEFAULT_COLOR = "Red";
+    private static final String DEFAULT_COLOR = "Red";
 
     String model; // instance field: belongs to each Car object
 
@@ -93,19 +96,20 @@ private static int numberOfCarsCreated = 0;
 
 public class StaticFieldDemo {
 public static void main(String[] args) {
-// Accessing static fields directly via the class name
-System.out.println("Initial cars created: " + Car.numberOfCarsCreated); // Output: Initial cars created: 0
-System.out.println("Default Car Color: " + Car.DEFAULT_COLOR); // Output: Default Car Color: Red
+         // Accessing static fields directly via the class name
+        System.out.println("Initial cars created: " + Car.getNumberOfCars()); // Output: Initial cars created: 0
+        System.out.println("Default Car Color: " + Car.DEFAULT_COLOR); // Output: Default Car Color: Red
 
         Car car1 = new Car("Sedan"); // Creates 1st car
         Car car2 = new Car("SUV");   // Creates 2nd car
+        Car car3 = new Car("Truck"); // Creates 3rd car
 
         // Both objects share the same static variable
-        System.out.println("Car 1's view of cars created: " + car1.numberOfCarsCreated); // Discouraged practice!
-        System.out.println("Car 2's view of cars created: " + car2.numberOfCarsCreated); // Discouraged practice!
+        System.out.println("Car 1's view of cars created: " + Car.getNumberOfCars()); // Discouraged practice!
+        System.out.println("Car 3's view of cars created: " + Car.getNumberOfCars()); // Discouraged practice!
 
         // Best practice: Access static fields via the class name
-        System.out.println("Total cars (from class): " + Car.numberOfCarsCreated); // Output: Total cars (from class): 2
+        System.out.println("Total cars (from class): " + Car.getNumberOfCars()); // Output: Total cars (from class): 2
 
         car1.displayInfo(); // Output: Model: Sedan, Default Color: Red
     }

@@ -88,9 +88,14 @@ for loop: Used when you know in advance how many times you want to execute a blo
 - Increment/Decrement (Update): Executed after each iteration. Typically used to update the loop counter.
 
 ```Java
-for (int i = 0; i < 5; i++) {
-    System.out.println("Iteration: " + i);
-}
+    for (int i = 0; i < 5; i++) {
+        System.out.println("Iteration: " + i);
+    }
+
+    int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    for (int i = 0; i < numbers.length; i++) {
+        System.out.println("Iteration: " + i + ", Value: " + numbers[i]);
+    }
 ```
 
 You can also have more complex for loops with multiple initializations or updates, but it's generally better to keep them simple for readability.
@@ -104,6 +109,11 @@ int[] numbers = {1, 2, 3, 4, 5};
 for (int number : numbers) {
     System.out.println("Number: " + number);
 }
+
+ String[] str = {"Manu", "Suman", "Ravi"};
+        for (String name : str) {
+            System.out.println("Names: " + name);
+        }
 ```
 
 ## while loop:
@@ -123,11 +133,19 @@ while (count < 3) {
 Similar to the while loop, but the condition is checked after each iteration. This guarantees that the loop body will execute at least once, even if the condition is initially false.
 
 ```Java
-int i = 0;
-do {
-    System.out.println("Value of i: " + i);
-    i++;
-} while (i < 2);
+    int count = 0;
+    while (count > 3) {
+        System.out.println("Count is: " + count);
+        count++;
+    }
+    System.out.println("Loop completed: " + count);
+
+    int count2 = 0;
+    do {
+        System.out.println("Value of count2: " + count2);
+        count2++;
+    } while (count2 > 3);
+    System.out.println("Loop completed: " + count2);
 ```
 
 ## Jump Statements:

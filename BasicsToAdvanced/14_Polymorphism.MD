@@ -67,7 +67,14 @@ In this Calculator class, the add method is overloaded multiple times with diffe
 class Animal { public void makeSound() { System.out.println("Animal makes a generic sound."); } }
 class Dog extends Animal { @Override public void makeSound() { System.out.println("Dog barks: Woof!"); } }
 class Cat extends Animal { @Override public void makeSound() { System.out.println("Cat meows: Meow!"); } }
-public class PolymorphismDemo { public static void main(String[] args) { Animal animal1 = new Animal(); Animal animal2 = new Dog(); // Superclass reference to a subclass object Animal animal3 = new Cat(); // Superclass reference to a subclass object
+
+public class PolymorphismDemo { public static void main(String[] args) {
+    Animal animal1 = new Animal();
+
+    // Superclass reference to a subclass object
+    Animal animal2 = new Dog();
+    Animal animal3 = new Cat();
+
     animal1.makeSound(); // Output: Animal makes a generic sound. (Animal type)
     animal2.makeSound(); // Output: Dog barks: Woof!          (Dog type at runtime)
     animal3.makeSound(); // Output: Cat meows: Meow!          (Cat type at runtime)

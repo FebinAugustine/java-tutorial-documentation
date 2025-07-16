@@ -11,7 +11,7 @@ Operators are special symbols that perform operations on one or more operands (v
 
 ## Arithmetic Operators:
 
-```
+```Java
 int a = 5;
 
 int b = 8;

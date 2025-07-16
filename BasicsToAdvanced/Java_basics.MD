@@ -10,24 +10,22 @@ Data can be of different types
 • image
 
 We have to give a name to variable to create/define it.
+
 ```
 myName = “Hello”;
 myAge = 33;
 avgMark = 75.8;
 
-````
+```
+
 Variable Naming Conventions:
 While you name or create a variable it's important to follow certain naming conventions to make your code readable and maintainable:
-•	Variable names should be descriptive and indicate the purpose of the variable.
-•	They must start with a letter, underscore (`_`), or dollar sign (`$`). They cannot start with a digit.
-•	They can contain letters, digits, underscores, and dollar signs.
-•	Java is case-sensitive, so `count` and `Count` are different variables.
-•	By convention, variable names are usually written in `camelCase`, where the first word is in lowercase, and subsequent words start with an uppercase letter (e.g., `firstName`, `totalAmount`).
-•	Avoid using Java keywords (reserved words like `class`, `public`, `int`, etc.) as variable names.
-
-
-
-
+• Variable names should be descriptive and indicate the purpose of the variable.
+• They must start with a letter, underscore (`_`), or dollar sign (`$`). They cannot start with a digit.
+• They can contain letters, digits, underscores, and dollar signs.
+• Java is case-sensitive, so `count` and `Count` are different variables.
+• By convention, variable names are usually written in `camelCase`, where the first word is in lowercase, and subsequent words start with an uppercase letter (e.g., `firstName`, `totalAmount`).
+• Avoid using Java keywords (reserved words like `class`, `public`, `int`, etc.) as variable names.
 
 Data Types:
 
@@ -38,23 +36,23 @@ So, in java the data types are categorized in to two primitive and reference.
 Primitive data types:
 These data types has a fixed size and range. And stores actual values in memory.
 
-•	Byte: byte
-o	Byte has a fixed size of 8 bits and stores whole numbers between -128 to 127.
-•	Shorst: short
-o	Short has a fixed size of 16 bits and stores whole numbers between -32,768 to 32,767
-•	Integer: int
-o	Integer has a fixed size of 32 bits and stores whole numbers between -2,147,483,648 to 2,147,483,647
+• Byte: byte
+o Byte has a fixed size of 8 bits and stores whole numbers between -128 to 127.
+• Shorst: short
+o Short has a fixed size of 16 bits and stores whole numbers between -32,768 to 32,767
+• Integer: int
+o Integer has a fixed size of 32 bits and stores whole numbers between -2,147,483,648 to 2,147,483,647
 •
-•	Long: long
-o	Long has a fixed size of 64 bits and stores large whole numbers between -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-•	Float: float
-o	Float has a fixed size of 32 bits and stores single-precision floating-point numbers approximately $\pm 3.4 \times 10^{-38}$ to $\pm 3.4 \times 10^{+38}$
-•	Double: double
-•	Double has a fixed size of 64 bits and stores double-precision floating-point numbers approximately $\pm 1.7 \times 10^{-308}$ to $\pm 1.7 \times 10^{+308}$
-•	Boolean: boolean
-o	Boolean has a fixed size of 1bit and stores `true` or `false` values.
-•	Character: char
-o	Character has a fixed size of 16 bits and stores a single Unicode character  range between '\u0000' to '\uffff' (0 to 65,535 in decimal)
+• Long: long
+o Long has a fixed size of 64 bits and stores large whole numbers between -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+• Float: float
+o Float has a fixed size of 32 bits and stores single-precision floating-point numbers approximately $\pm 3.4 \times 10^{-38}$ to $\pm 3.4 \times 10^{+38}$
+• Double: double
+• Double has a fixed size of 64 bits and stores double-precision floating-point numbers approximately $\pm 1.7 \times 10^{-308}$ to $\pm 1.7 \times 10^{+308}$
+• Boolean: boolean
+o Boolean has a fixed size of 1bit and stores `true` or `false` values.
+• Character: char
+o Character has a fixed size of 16 bits and stores a single Unicode character range between '\u0000' to '\uffff' (0 to 65,535 in decimal)
 
 Examples:
 
@@ -67,7 +65,7 @@ float pi = 3.14159f;         // 'f' suffix indicates a float literal
 double gravity = 9.81;
 boolean isJavaFun = true;
 char initial = 'J';
-````
+```
 
 Reference data types are:
 These data types do not store the actual value directly in memory. Instead, they store a reference (an address in memory) to the object that holds the actual data. Reference types include:
@@ -94,7 +92,7 @@ Creation of a variable:
 There are twoparts in creating a variable, one is declaration and other is initialization.
 When you are defining a variable you have to add the data type first followed by variable name then equal sign then variable itself ending with a semicolon.
 
-```
+```Java
 int age = 30;
 float hai = 22.3f;
 double percentage = 82.55
@@ -105,7 +103,7 @@ String myName = “Hello”
 You can first declare and then initialize or do it both at the same time is allowed.
 Example:
 
-```
+```Java
 int rollNo;  // declaration
 rollNo = 24;   // initialization
 
@@ -121,7 +119,7 @@ Bigger size data type cannot be converted to smaller size but smaller size to bi
 
 Example
 
-```
+```Java
 byte b = 127;
 int a = 1924;
 
@@ -162,7 +160,7 @@ Operators are special symbols that perform operations on one or more operands (v
 6. Ternary operator
    Arithmetic Operators:
 
-```
+```Java
 int a = 5;
 
 int b = 8;

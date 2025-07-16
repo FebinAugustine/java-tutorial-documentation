@@ -18,9 +18,13 @@ Constructors are essential because they ensure that an object is born correctly.
 
 1. Initializing Object State: This is their most fundamental role. When you create an object, its instance variables might have default values (0 for int, null for objects, false for boolean). Constructors allow you to set meaningful initial values.
 
-### Example:
+#### Example:
 
-When you create a Person object, you want to immediately set their name and age, not have them be null and 0 by default. 2. Enforcing Invariants: An "invariant" is a condition that must always be true for an object to be considered valid. Constructors are the perfect place to enforce these conditions. If an object must have a non-null ID, the constructor can take an ID parameter and throw an error if it's null.
+When you create a Person object, you want to immediately set their name and age, not have them be null and 0 by default.
+
+#### 2. Enforcing Invariants:
+
+An "invariant" is a condition that must always be true for an object to be considered valid. Constructors are the perfect place to enforce these conditions. If an object must have a non-null ID, the constructor can take an ID parameter and throw an error if it's null.
 
 ### Example:
 
@@ -35,7 +39,15 @@ While less common than setting fields, constructors can perform initial setup li
 
 Constructors are linked directly to the new keyword. You cannot create an object without a constructor being invoked. This provides a clear, defined entry point for object instantiation.
 
-### 5. HOW? Defining and Using Constructors
+### 5. this Keyword:
+
+The this keyword is a reference to the current object being constructed. It is used to access and modify fields and methods of the current object.
+
+### 6. Constructor Chaining:
+
+Constructors can call other constructors to reuse code. This is known as constructor chaining.
+
+## 2. How to Define a Constructor
 
 Let's look at the syntax and different types of constructors.
 
@@ -88,11 +100,11 @@ int age; // Will be 0 by default
 }
 
 public class ConstructorDemo2 {
-public static void main(String[] args) {
-Cat myCat = new Cat(); // Calls the implicit default constructor
-System.out.println("Cat name: " + myCat.name); // Output: Cat name: null
-System.out.println("Cat age: " + myCat.age); // Output: Cat age: 0
-}
+    public static void main(String[] args) {
+        Cat myCat = new Cat(); // Calls the implicit default constructor
+        System.out.println("Cat name: " + myCat.name); // Output: Cat name: null
+        System.out.println("Cat age: " + myCat.age); // Output: Cat age: 0
+    }
 }
 ```
 
@@ -131,14 +143,12 @@ String author;
 }
 
 public class ConstructorDemo3 {
-public static void main(String[] args) {
-Book book1 = new Book(); // Calls the explicit no-arg constructor
-book1.displayInfo(); // Output: Title: Untitled, Author: Anonymous
-
+    public static void main(String[] args) {
+        Book book1 = new Book(); // Calls the explicit no-arg constructor
+        book1.displayInfo(); // Output: Title: Untitled, Author: Anonymous
         Book book2 = new Book("The Great Gatsby", "F. Scott Fitzgerald"); // Calls parameterized constructor
         book2.displayInfo();     // Output: Title: The Great Gatsby, Author: F. Scott Fitzgerald
     }
-
 }
 ```
 
@@ -175,11 +185,11 @@ String author;
 }
 
 public class ConstructorDemo4 {
-public static void main(String[] args) {
-// Using the parameterized constructor
-Book fictionBook = new Book("1984", "George Orwell");
-fictionBook.displayInfo(); // Output: Title: 1984, Author: George Orwell
-}
+    public static void main(String[] args) {
+        // Using the parameterized constructor
+        Book fictionBook = new Book("1984", "George Orwell");
+        fictionBook.displayInfo(); // Output: Title: 1984, Author: George Orwell
+    }
 }
 ```
 
@@ -236,15 +246,16 @@ String major;
 
 public class ConstructorOverloadDemo {
 public static void main(String[] args) {
-Student s1 = new Student("Alice", 101, "Computer Science");
-s1.displayStudent();
+    Student s1 = new Student("Alice", 101, "Computer Science");
+    s1.displayStudent();
 
-        Student s2 = new Student("Bob", 102);
-        s2.displayStudent();
+            Student s2 = new Student("Bob", 102);
+            s2.displayStudent();
 
-        Student s3 = new Student(103);
-        s3.displayStudent();
+            Student s3 = new Student(103);
+            s3.displayStudent();
     }
+
 
 }
 ```
